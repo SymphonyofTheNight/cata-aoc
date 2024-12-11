@@ -46,12 +46,35 @@ const config = {
       animation: {
         revealVertical: 'revealVertical 400ms forwards cubic-bezier(0, 1, 0.25, 1)',
       },
+      backgroundColor: {
+        "primary-bg-color": "#AD1A2E",
+        "secondary-bg-color": "#4D4D4F"
+      },
+      backgroundImage: {
+        "hero-banner": "url('https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/hero-banner2x.png?t=1730268778')",
+        "kromer-country": "url('https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/kromercountryimage.jpg?t=1712200908')"
+      }
     },
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    }
   },
 
   plugins: [
     // @ts-ignore
-
     require('tailwindcss-radix')(),
     require('tailwindcss-animate'),
     require('@tailwindcss/container-queries'),

@@ -14,15 +14,15 @@ interface Image {
 type Price =
   | string
   | {
-      type: 'sale';
-      currentValue: string;
-      previousValue: string;
-    }
+    type: 'sale';
+    currentValue: string;
+    previousValue: string;
+  }
   | {
-      type: 'range';
-      minValue: string;
-      maxValue: string;
-    };
+    type: 'range';
+    minValue: string;
+    maxValue: string;
+  };
 
 interface Product {
   id: string;
@@ -40,6 +40,7 @@ interface Props extends Product {
   imagePriority?: boolean;
   imageSize?: 'square' | 'tall' | 'wide';
   showCompare?: boolean;
+  productOptions: any;
 }
 
 const ProductCard = ({
@@ -54,14 +55,15 @@ const ProductCard = ({
   showCompare = true,
   subtitle,
   name,
+  productOptions,
   ...props
 }: Props) => (
   <div className={cn('group relative flex flex-col overflow-visible', className)} {...props}>
     <div className="relative flex justify-center pb-3">
       <div
-        className={cn('relative flex-auto', {
+        className={cn('relative flex-auto bg-white', {
           'aspect-square': imageSize === 'square',
-          'aspect-[4/5]': imageSize === 'tall',
+          'aspect-[5/5]': imageSize === 'tall',
           'aspect-[7/5]': imageSize === 'wide',
         })}
       >
@@ -80,8 +82,8 @@ const ProductCard = ({
       </div>
     </div>
     <div className={cn('flex flex-1 flex-col gap-1', Boolean(addToCart) && 'justify-end')}>
-      {subtitle ? <p className="text-base text-gray-500">{subtitle}</p> : null}
-      <h3 className="text-xl font-bold lg:text-2xl">
+      {/* {subtitle ? <p className="text-base text-gray-500">{subtitle}</p> : null} */}
+      <h3 className={cn('text-xl font-bold lg:text-2xl', '!text-[14px] font-[600] uppercase mx-auto')}>
         <Link
           className="focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary/20 focus-visible:ring-0"
           href={href}
@@ -90,27 +92,28 @@ const ProductCard = ({
           {name}
         </Link>
       </h3>
+      <span className='uppercase text-[12px] text-[#888888] font-[400] mx-auto'>{productOptions} color available</span>
       <div className="flex flex-wrap items-end justify-between pt-1">
         {Boolean(price) &&
           (typeof price === 'object' ? (
-            <p className="flex flex-col gap-1">
+            <p className="flex flex-col gap-1 mx-auto">
               {price.type === 'range' && (
-                <span>
+                <span className='text-[#AD1A2E] font-[600] text-[14px] mx-auto'>
                   {price.minValue} - {price.maxValue}
                 </span>
               )}
 
               {price.type === 'sale' && (
                 <>
-                  <span>
+                  <span className='text-[#AD1A2E] font-[600] text-[14px] mx-auto'>
                     Was: <span className="line-through">{price.previousValue}</span>
                   </span>
-                  <span>Now: {price.currentValue}</span>
+                  <span className='text-[#AD1A2E] font-[600] text-[14px] mx-auto'>Now: {price.currentValue}</span>
                 </>
               )}
             </p>
           ) : (
-            <span>{price}</span>
+            <span className='text-[#AD1A2E] font-[600] text-[14px] mx-auto'>{price}</span>
           ))}
 
         {showCompare && <Compare id={id} image={image} name={name} />}

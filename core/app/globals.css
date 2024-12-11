@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-    height: auto!important;
+.social-container a{
+    height: 40px!important;
+    width: 40px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
