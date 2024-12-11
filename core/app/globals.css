@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+    --tw-ring-color: unset!important;
+} */
+
 .social-container a{
     height: 40px!important;
     width: 40px!important;
@@ -9,4 +13,34 @@
     align-items: center;
     justify-content: center;
 }
+
+[aria-labelledby="radix-:Rf6tlt7H1:"]{
+    background: #AD1A2E!important;
+    z-index: 200!important;
+    height: auto!important;
+    /* display: grid!important;
+    align-items: center !important;
+    justify-content: center !important; */
+}
+
+[aria-labelledby="radix-:Rf6tlt7H1:"] div{
+    max-width: 1440px!important;
+    width: 92%!important;
+    margin: auto!important;
+}
+
+[aria-labelledby="radix-:Rf6tlt7H1:"] div:nth-child(3) section{
+    color: #ffffff!important;
+}
+
+[aria-labelledby="radix-:Rf6tlt7H1:"] div:nth-child(3) section:nth-child(2) ul li a span:nth-child(2) p{
+    font-size: 18px!important;
+    /* font-weight: 600; */
+}
+
+/* [aria-labelledby="radix-:Rf6tlt7H1:"] input {
+    outline: none !important;
+    border: none !important;
+    --tw-ring-color: unset!important;
+} */
 

@@ -51,30 +51,30 @@ export const QuickSearch = ({ logo }: SearchProps) => {
         categories:
           searchResults.products.length > 0
             ? Object.entries(
-                searchResults.products.reduce<Record<string, string>>((categories, product) => {
-                  product.categories.edges?.forEach((category) => {
-                    categories[category.node.name] = category.node.path;
-                  });
+              searchResults.products.reduce<Record<string, string>>((categories, product) => {
+                product.categories.edges?.forEach((category) => {
+                  categories[category.node.name] = category.node.path;
+                });
 
-                  return categories;
-                }, {}),
-              ).map(([name, path]) => {
-                return { label: name, href: path };
-              })
+                return categories;
+              }, {}),
+            ).map(([name, path]) => {
+              return { label: name, href: path };
+            })
             : [],
         brands:
           searchResults.products.length > 0
             ? Object.entries(
-                searchResults.products.reduce<Record<string, string>>((brands, product) => {
-                  if (product.brand) {
-                    brands[product.brand.name] = product.brand.path;
-                  }
+              searchResults.products.reduce<Record<string, string>>((brands, product) => {
+                if (product.brand) {
+                  brands[product.brand.name] = product.brand.path;
+                }
 
-                  return brands;
-                }, {}),
-              ).map(([name, path]) => {
-                return { label: name, href: path };
-              })
+                return brands;
+              }, {}),
+            ).map(([name, path]) => {
+              return { label: name, href: path };
+            })
             : [],
       };
     }

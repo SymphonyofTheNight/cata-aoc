@@ -124,12 +124,20 @@ const Search = ({ initialTerm = '', logo, onSearch }: Props) => {
               <div className="me-2 hidden lg:block lg:justify-self-start">
                 <CustomLink className="overflow-hidden text-ellipsis py-3" href="/">
                   {typeof logo === 'object' ? (
+                    // <BcImage
+                    //   alt={logo.altText}
+                    //   className="max-h-16 object-contain"
+                    //   height={32}
+                    //   priority
+                    //   src={logo.src}
+                    //   width={155}
+                    // />
                     <BcImage
                       alt={logo.altText}
-                      className="max-h-16 object-contain"
+                      className="max-h-16 scale-125 object-contain"
                       height={32}
                       priority
-                      src={logo.src}
+                      src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/stormy-kromer-logo-header-2x.png?t=1730185685'
                       width={155}
                     />
                   ) : (
