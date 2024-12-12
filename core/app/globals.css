@@ -18,8 +18,7 @@
 html body > *:nth-last-child(2){
     background: #AD1A2E!important;
     z-index: 200!important;
-    height: 115.5px!important;
-    display: grid!important;
+    height: auto!important;
     /* display: grid!important;
     align-items: center !important;
     justify-content: center !important; */
