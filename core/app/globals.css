@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
+* {
     --tw-ring-color: unset!important;
-} */
+}
 
 .social-container a{
     height: 40px!important;
@@ -14,7 +14,8 @@
     justify-content: center;
 }
 
-[aria-labelledby="radix-:Rf6tlt7H1:"]{
+/* need to fix this cant target the element by attribute */
+html body > *:nth-last-child(2){
     background: #AD1A2E!important;
     z-index: 200!important;
     height: auto!important;
@@ -23,17 +24,17 @@
     justify-content: center !important; */
 }
 
-[aria-labelledby="radix-:Rf6tlt7H1:"] div{
+html body > *:nth-last-child(2) div{
     max-width: 1440px!important;
     width: 92%!important;
     margin: auto!important;
 }
 
-[aria-labelledby="radix-:Rf6tlt7H1:"] div:nth-child(3) section{
+html body > *:nth-last-child(2) div:nth-child(3) section{
     color: #ffffff!important;
 }
 
-[aria-labelledby="radix-:Rf6tlt7H1:"] div:nth-child(3) section:nth-child(2) ul li a span:nth-child(2) p{
+html body > *:nth-last-child(2) div:nth-child(3) section:nth-child(2) ul li a span:nth-child(2) p{
     font-size: 18px!important;
     /* font-weight: 600; */
 }
@@ -43,4 +44,6 @@
     border: none !important;
     --tw-ring-color: unset!important;
 } */
+
+
 
