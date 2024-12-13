@@ -41,4 +41,27 @@ html body > *:nth-last-child(2) div:nth-child(3) section:nth-child(2) ul li a sp
 
 
 
+/* need to fix this cant target the element by attribute */
+html body > *:nth-last-child(3){
+    background: #AD1A2E!important;
+    z-index: 200!important;
+    height: auto!important;
+    /* display: grid!important;
+    align-items: center !important;
+    justify-content: center !important; */
+}
 
+html body > *:nth-last-child(3) div{
+    max-width: 1440px!important;
+    width: 92%!important;
+    margin: auto!important;
+}
+
+html body > *:nth-last-child(3) div:nth-child(3) section{
+    color: #ffffff!important;
+}
+
+html body > *:nth-last-child(3) div:nth-child(3) section:nth-child(2) ul li a span:nth-child(2) p{
+    font-size: 18px!important;
+    /* font-weight: 600; */
+}
