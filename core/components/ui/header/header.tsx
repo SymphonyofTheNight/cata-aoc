@@ -94,7 +94,7 @@ const Header = ({
         </CustomLink>
 
         {/* nav */}
-        <NavigationMenuPrimitive.Root className="hidden lg:block">
+        <NavigationMenuPrimitive.Root className="hidden lg:block relative">
           <NavigationMenuPrimitive.List className="flex items-center gap-2 lg:gap-4">
             {links.map((link) =>
               link.groups && link.groups.length > 0 ? (
