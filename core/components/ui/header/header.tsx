@@ -113,29 +113,76 @@ const Header = ({
                   {/* dropdown parent nav */}
                   <NavigationMenuPrimitive.Content
                     className={cn('flex gap-20 2xl:container data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 sm:px-10 lg:px-12 2xl:mx-auto 2xl:px-0',
-                      '!max-w-[1000px]')}>
-                    {link.groups.map((group) => (
-                      <ul className="flex flex-col" key={group.href}>
-                        <li>
-                          <NavigationMenuPrimitive.Link asChild>
-                            <CustomLink className="block p-3 font-semibold" href={group.href}>
-                              {group.label}
-                            </CustomLink>
-                          </NavigationMenuPrimitive.Link>
-                        </li>
-                        {group.links &&
-                          group.links.length > 0 &&
-                          group.links.map((nestedLink) => (
-                            <li key={nestedLink.href}>
-                              <NavigationMenuPrimitive.Link asChild>
-                                <CustomLink className="block p-3" href={nestedLink.href}>
-                                  {nestedLink.label}
-                                </CustomLink>
-                              </NavigationMenuPrimitive.Link>
-                            </li>
+                      '!max-w-[1000px]', '!px-[40px]')}>
+
+                    {link.label === 'Bases' ?
+                      <div>
+                        <div className='mb-15px'>
+                          <h2 className='text-[#222] font-[800] uppercase text-[28px]'
+                          >
+                            {link.label}
+                          </h2>
+                        </div>
+                        <div className="flex flex-col">
+                          {link.groups.map((group) => (
+                            <ul className="flex flex-col" key={group.href}>
+                              <li key={group.href}>
+                                <NavigationMenuPrimitive.Link asChild>
+                                  <CustomLink className="block p-3 font-semibold pl-0" href={group.href}>
+                                    {group.label}
+                                  </CustomLink>
+                                </NavigationMenuPrimitive.Link>
+                              </li>
+                              {group.links &&
+                                group.links.length > 0 &&
+                                group.links.map((nestedLink) => (
+                                  <li key={nestedLink.href}>
+                                    <NavigationMenuPrimitive.Link asChild>
+                                      <CustomLink className="block p-3" href={nestedLink.href}>
+                                        {nestedLink.label}
+                                      </CustomLink>
+                                    </NavigationMenuPrimitive.Link>
+                                  </li>
+                                ))}
+                            </ul>
                           ))}
-                      </ul>
-                    ))}
+                        </div>
+                      </div>
+                      :
+                      <div>
+                        <div className='mb-15px'>
+                          <h2 className='text-[#222] font-[800] uppercase text-[28px]'
+                          >
+                            {link.label}
+                          </h2>
+                        </div>
+                        <div className="flex flex-col">
+                          {link.groups.map((group) => (
+                            <ul className="flex flex-col" key={group.href}>
+                              <li key={group.href}>
+                                <NavigationMenuPrimitive.Link asChild>
+                                  <CustomLink className="block p-3 font-semibold pl-0" href={group.href}>
+                                    {group.label}
+                                  </CustomLink>
+                                </NavigationMenuPrimitive.Link>
+                              </li>
+                              {group.links &&
+                                group.links.length > 0 &&
+                                group.links.map((nestedLink) => (
+                                  <li key={nestedLink.href}>
+                                    <NavigationMenuPrimitive.Link asChild>
+                                      <CustomLink className="block p-3" href={nestedLink.href}>
+                                        {nestedLink.label}
+                                      </CustomLink>
+                                    </NavigationMenuPrimitive.Link>
+                                  </li>
+                                ))}
+                            </ul>
+                          ))}
+                        </div>
+                      </div>
+                    }
+
                   </NavigationMenuPrimitive.Content>
 
                 </NavigationMenuPrimitive.Item>
@@ -151,7 +198,7 @@ const Header = ({
             )}
           </NavigationMenuPrimitive.List>
 
-          <NavigationMenuPrimitive.Viewport className="absolute bg-white start-0 top-full z-50 w-full pb-12 pt-6 shadow-xl duration-200 animate-in slide-in-from-top-5" />
+          <NavigationMenuPrimitive.Viewport className="absolute bg-white start-0 top-full z-50 w-full pb-12 pt-6 shadow-xl duration-200 animate-in slide-in-from-top-5 !py-[24px]" />
         </NavigationMenuPrimitive.Root>
 
         <div className={cn('flex items-center gap-2 lg:gap-4', '!text-white')}>
