@@ -183,6 +183,10 @@ const Header = ({
                       </div>
                     }
 
+                    <div className='h-auto w-auto !flex !justify-end'>
+                      <img className='h-[250px] w-[80%] object-contain' src='https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/caps-banner-aug2024.png?t=1724220853' />
+                    </div>
+
                   </NavigationMenuPrimitive.Content>
 
                 </NavigationMenuPrimitive.Item>
