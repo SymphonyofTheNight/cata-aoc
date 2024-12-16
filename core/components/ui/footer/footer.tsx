@@ -62,7 +62,7 @@ const Footer = ({
             <ul className="flex flex-col gap-4">
               {section.links.map((link) => (
                 <li className='text-left md:text-right' key={link.href}>
-                  <CustomLink className='font-[200] text-[14px]' href={link.href}>{link.label}</CustomLink>
+                  <CustomLink className='font-[200] text-[14px] hover:text-[#AD1A2E]' href={link.href}>{link.label}</CustomLink>
                 </li>
               ))}
             </ul>
@@ -113,7 +113,7 @@ const Footer = ({
             <ul className="flex gap-3 justify-center md:justify-start">
               {socialMediaLinks?.map((link) => (
                 <li className='social-container' key={link.href}>
-                  <CustomLink className="inline-block bg-[#58595B] px-[10px] py-[10px]" href={link.href} target="_blank">
+                  <CustomLink className="inline-block bg-[#58595B] px-[10px] py-[10px] hover:text-[#AD1A2E]" href={link.href} target="_blank">
                     {link.icon}
                   </CustomLink>
                 </li>

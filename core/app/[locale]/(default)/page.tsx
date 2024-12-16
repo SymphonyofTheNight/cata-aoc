@@ -244,7 +244,7 @@ export default async function Home({ params }: Props) {
               SIGN UP FOR EXCLUSIVE OFFERS, <br /> SALE ALERTS & MORE
             </span>
             <div className='bg-white mt-[50px] flex flex-row]'>
-              <input className='h-[50px] pl-[16px] w-full text-[#58595b]' placeholder='Enter your email' />
+              <input className='h-[50px] pl-[16px] w-full text-[#58595b] outline-none' placeholder='Enter your email' />
               <button className='text-[#AD1A2E] pl-[25px] pr-[25px] text-[14px] font-[600] hover:bg-[#AD1A2E] hover:text-[#FFFFFF]'>
                 SUBSCRIBED
               </button>
