@@ -118,7 +118,7 @@ const Header = ({
                     {link.label === 'Bases' ?
                       <div>
                         <div className='mb-15px'>
-                          <h2 className='text-[#222] font-[800] uppercase text-[28px]'
+                          <h2 className='text-[#222] font-[800] uppercase text-[28px] whitespace-nowrap'
                           >
                             {link.label}
                           </h2>
@@ -126,9 +126,9 @@ const Header = ({
                         <div className="flex flex-col">
                           {link.groups.map((group) => (
                             <ul className="flex flex-col" key={group.href}>
-                              <li key={group.href}>
+                              <li className='whitespace-nowrap' key={group.href}>
                                 <NavigationMenuPrimitive.Link asChild>
-                                  <CustomLink className="block p-3 font-semibold pl-0" href={group.href}>
+                                  <CustomLink className="block p-3 font-semibold pl-0 text-[#58595b] uppercase w-auto" href={group.href}>
                                     {group.label}
                                   </CustomLink>
                                 </NavigationMenuPrimitive.Link>
@@ -151,7 +151,7 @@ const Header = ({
                       :
                       <div>
                         <div className='mb-15px'>
-                          <h2 className='text-[#222] font-[800] uppercase text-[28px]'
+                          <h2 className='text-[#222] font-[800] uppercase text-[28px] whitespace-nowrap'
                           >
                             {link.label}
                           </h2>
@@ -159,9 +159,9 @@ const Header = ({
                         <div className="flex flex-col">
                           {link.groups.map((group) => (
                             <ul className="flex flex-col" key={group.href}>
-                              <li key={group.href}>
+                              <li className='whitespace-nowrap' key={group.href}>
                                 <NavigationMenuPrimitive.Link asChild>
-                                  <CustomLink className="block p-3 font-semibold pl-0" href={group.href}>
+                                  <CustomLink className="block p-3 font-semibold pl-0 text-[#58595b] uppercase w-auto" href={group.href}>
                                     {group.label}
                                   </CustomLink>
                                 </NavigationMenuPrimitive.Link>
@@ -183,8 +183,8 @@ const Header = ({
                       </div>
                     }
 
-                    <div className='h-auto w-auto !flex !justify-end'>
-                      <img className='h-[250px] w-[80%] object-contain' src='https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/caps-banner-aug2024.png?t=1724220853' />
+                    <div className='h-auto w-auto !flex items-start !justify-end'>
+                      <img className='h-auto w-[80%] object-contain' src='https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/caps-banner-aug2024.png?t=1724220853' />
                     </div>
 
                   </NavigationMenuPrimitive.Content>
