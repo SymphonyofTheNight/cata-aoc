@@ -53,7 +53,7 @@ const Footer = ({
 }: Props) => (
   <footer className={cn('2xl:container 2xl:mx-auto', className, 'bg-[#4D4D4F] !mx-0 !max-w-[100%] text-white')} {...props}>
 
-    <section className="flex flex-col-reverse gap-8 border-t border-gray-200 py-10 md:flex-row lg:gap-4 2xl:px-0 mb-[35px] max-w-[1440px] w-[92%] mx-auto">
+    <section className="flex flex-col-reverse gap-8 py-10 md:flex-row lg:gap-4 2xl:px-0 mb-[35px] max-w-[1440px] w-[92%] mx-auto">
 
       <nav className={cn('grid flex-auto auto-cols-fr md:gap-[9rem] sm:grid-flow-col', 'gap-[3rem]')}>
         {sections.map((section) => (

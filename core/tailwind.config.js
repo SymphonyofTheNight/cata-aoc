@@ -52,7 +52,9 @@ const config = {
       },
       backgroundImage: {
         "hero-banner": "url('https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/hero-banner2x.png?t=1730268778')",
-        "kromer-country": "url('https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/kromercountryimage.jpg?t=1712200908')"
+        "kromer-country": "url('https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/kromercountryimage.jpg?t=1712200908')",
+        "kromer-footer-bg1": "url('https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/email-bg.jpg?t=1712027736')",
+        "kromer-footer-bg2": "url('https://cdn11.bigcommerce.com/s-3vdgh6wtox/images/stencil/original/image-manager/factory-bg.jpg?t=1712027738')",
       }
     },
     screens: {
