@@ -237,9 +237,9 @@ export default async function Home({ params }: Props) {
         </div>
       </div>
 
-      <div className='bg-red-700 h-[480px] w-full mt-[50px] flex flex-row flex-wrap'>
-        <div className='bg-kromer-footer-bg1 h-[480px] w-[50%] bg-cover bg-center grid items-center justify-center'>
-          <div className='grid items-center justify-center'>
+      <div className='bg-red-700 h-auto w-full mt-[50px] flex flex-col lg:flex-row flex-wrap'>
+        <div className='bg-kromer-footer-bg1 h-[480px] w-[100%] lg:w-[50%] bg-cover bg-center grid items-center justify-center'>
+          <div className='grid items-center justify-center px-[7vw] lg:px-[0px]'>
             <span className='text-center text-[28px] font-[600] text-[#ffffff]'>
               SIGN UP FOR EXCLUSIVE OFFERS, <br /> SALE ALERTS & MORE
             </span>
@@ -251,8 +251,8 @@ export default async function Home({ params }: Props) {
             </div>
           </div>
         </div>
-        <div className='bg-kromer-footer-bg2 h-[480px] w-[50%] bg-cover bg-center grid items-center justify-center'>
-          <div className='grid items-center justify-center'>
+        <div className='bg-kromer-footer-bg2 h-[480px] w-[100%] lg:w-[50%] bg-cover bg-center grid items-center justify-center'>
+          <div className='grid items-center justify-center px-[7vw] lg:px-[0px]'>
             <span className='text-center text-[28px] font-[600] text-[#ffffff]'>
               MAKE YOUR RESERVATION TODAY <br /> FOR THE FREE FACTORY TOUR
             </span>
