@@ -69,14 +69,17 @@ export const Details = ({ product }: Props) => {
     product.prices?.priceRange.min.value !== product.prices?.priceRange.max.value;
 
   return (
-    <div>
-      {product.brand && (
+    <div className='mt-[50px]'>
+      {/* {product.brand && (
         <p className="mb-2 font-semibold uppercase text-gray-500">{product.brand.name}</p>
-      )}
+      )} */}
 
-      <h1 className="mb-4 text-4xl font-black lg:text-5xl">{product.name}</h1>
+      <div className='flex items-center justify-between'>
+        <ReviewSummary data={product} />
+        <span className='text-[#AD1A2E]'>Write a Review</span>
+      </div>
 
-      <ReviewSummary data={product} />
+      <h1 className="mb-4 text-4xl lg:text-5xl text-[#111] text-[36px] font-[500] py-[15px]">{product.name}</h1>
 
       {product.prices && (
         <div className="my-6 text-2xl font-bold lg:text-3xl">
@@ -107,7 +110,7 @@ export const Details = ({ product }: Props) => {
                 </span>
               )}
               {product.prices.salePrice?.value !== undefined &&
-              product.prices.basePrice?.value !== undefined ? (
+                product.prices.basePrice?.value !== undefined ? (
                 <>
                   <span>
                     {t('Prices.was')}:{' '}

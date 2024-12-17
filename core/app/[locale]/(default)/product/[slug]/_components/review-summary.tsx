@@ -31,7 +31,7 @@ export const ReviewSummary = ({ data }: Props) => {
     <div className="flex items-center gap-3">
       <p
         aria-describedby={summaryId}
-        className={cn('flex flex-nowrap text-primary', hasNoReviews && 'text-gray-400')}
+        className={cn('flex flex-nowrap text-[#AD1A2E]', hasNoReviews && 'text-gray-400')}
       >
         <Rating rating={averageRating} />
       </p>
@@ -40,11 +40,11 @@ export const ReviewSummary = ({ data }: Props) => {
         {!hasNoReviews && (
           <>
             <span className="sr-only">{t('rating')}</span>
-            {averageRating}
+            {/* {averageRating} */}
             <span className="sr-only">{t('ratingRange')}</span>{' '}
           </>
         )}
-        <span className="sr-only">{t('reviewsNumber')}</span>({numberOfReviews})
+        <span className="sr-only">{t('reviewsNumber')}</span><span className='text-[#AD1A2E] font-[400]'>({numberOfReviews} reviews)</span>
       </div>
     </div>
   );

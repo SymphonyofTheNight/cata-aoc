@@ -38,11 +38,11 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
             })
           }
         >
-          <ChevronLeft />
+          <ChevronLeft className='text-[#AD1A2E] font-[800] text-[18px] h-[40px] w-[40px]' />
         </button>
         <nav
           aria-label={t('thumbnailNavigation')}
-          className="mt-3 flex flex-col w-auto items-center gap-4 px-6 py-1 sm:px-1 md:mt-5 md:gap-6"
+          className="mt-3 flex flex-col w-auto items-center gap-4 px-6 py-1 sm:px-1 md:mt-5"
         >
           {images.map((image, index) => {
             const isActive = selectedImageIndex === index;
@@ -51,7 +51,7 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
               <button
                 aria-label={t('enlarge')}
                 aria-pressed={isActive}
-                className="inline-block h-12 w-12 flex-shrink-0 flex-grow-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 md:h-24 md:w-24"
+                className="inline-block h-12 w-12 flex-shrink-0 flex-grow-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 md:h-[5rem] md:w-[5rem]"
                 key={image.src}
                 onClick={() => {
                   setSelectedImageIndex(index);
@@ -60,8 +60,8 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
                 <BcImage
                   alt={image.altText}
                   className={cn(
-                    'flex h-full w-full cursor-pointer items-center justify-center border-2 object-contain hover:border-primary',
-                    isActive && 'border-primary',
+                    'flex h-full w-full cursor-pointer items-center justify-center border-2 border-transparent object-contain hover:border-[#AD1A2E]',
+                    isActive && 'border-[#AD1A2E]',
                   )}
                   height={94}
                   priority={true}
@@ -74,7 +74,7 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
         </nav>
         <button
           aria-label={t('next')}
-          className="focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 flex items-center justify-center rotate-90"
+          className="focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 flex items-center justify-center rotate-90 mt-[25px]"
           onClick={() =>
             setSelectedImageIndex((prev) => {
               if (prev === images.length - 1) {
@@ -85,11 +85,11 @@ const Gallery = ({ className, images, defaultImageIndex = 0 }: Props) => {
             })
           }
         >
-          <ChevronRight />
+          <ChevronRight className='text-[#AD1A2E] font-[800] text-[18px] h-[40px] w-[40px]' />
         </button>
       </div>
 
-      <figure className="relative aspect-square h-full max-h-[548px] w-full">
+      <figure className="relative aspect-square h-full max-h-[548px] w-full mt-[65px]">
         {selectedImage ? (
           <BcImage
             alt={selectedImage.altText}
