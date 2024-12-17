@@ -99,7 +99,7 @@ export default async function Product(props: Props) {
     <>
       {category && <Breadcrumbs category={category} />}
 
-      <div className="mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8">
+      <div className="mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8 w-[92%] max-w-[1440px] mx-auto">
         <Gallery product={product} />
         <Details product={product} />
         <div className="lg:col-span-2">
@@ -111,9 +111,9 @@ export default async function Product(props: Props) {
         </div>
       </div>
 
-      <Suspense fallback={t('loading')}>
+      {/* <Suspense fallback={t('loading')}>
         <RelatedProducts productId={product.entityId} />
-      </Suspense>
+      </Suspense> */}
 
       <ProductViewed product={product} />
     </>

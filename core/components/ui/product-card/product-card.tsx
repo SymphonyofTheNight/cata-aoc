@@ -85,7 +85,7 @@ const ProductCard = ({
       {/* {subtitle ? <p className="text-base text-gray-500">{subtitle}</p> : null} */}
       <h3 className={cn('text-xl font-bold lg:text-2xl', '!text-[14px] font-[600] uppercase mx-auto')}>
         <Link
-          className="focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary/20 focus-visible:ring-0"
+          className="focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary/20 focus-visible:ring-0 hover:text-[#AD1A2E]"
           href={href}
         >
           <span aria-hidden="true" className="absolute inset-0 bottom-20" />
