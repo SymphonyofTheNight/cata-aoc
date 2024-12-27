@@ -35,6 +35,34 @@ export const ProductSchemaFragment = graphql(`
         }
       }
     }
+
+    variants {
+        edges {
+          node {
+            productOptions {
+              edges {
+                node {
+                  isVariantOption
+                  ... on MultipleChoiceOption {
+                    __typename
+                    values {
+                      edges {
+                        node {
+                          ... on SwatchOptionValue {
+                            imageUrl(height: 320, width: 320)
+                            isSelected
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      
     condition
     availabilityV2 {
       status
@@ -56,33 +84,33 @@ export const ProductSchema = ({ product }: Props) => {
 
   const brand = product.brand
     ? {
-        '@type': 'Brand' as const,
-        url: product.brand.path,
-        name: product.brand.name,
-      }
+      '@type': 'Brand' as const,
+      url: product.brand.path,
+      name: product.brand.name,
+    }
     : null;
 
   const aggregateRating =
     product.reviewSummary.numberOfReviews > 0
       ? {
-          '@type': 'AggregateRating' as const,
-          ratingValue: product.reviewSummary.averageRating,
-          reviewCount: product.reviewSummary.numberOfReviews,
-        }
+        '@type': 'AggregateRating' as const,
+        ratingValue: product.reviewSummary.averageRating,
+        reviewCount: product.reviewSummary.numberOfReviews,
+      }
       : null;
 
   const priceSpecification = product.prices
     ? {
-        '@type': 'PriceSpecification' as const,
-        price: product.prices.price.value,
-        priceCurrency: product.prices.price.currencyCode,
-        ...(product.prices.priceRange.min.value !== product.prices.priceRange.max.value
-          ? {
-              minPrice: product.prices.priceRange.min.value,
-              maxPrice: product.prices.priceRange.max.value,
-            }
-          : null),
-      }
+      '@type': 'PriceSpecification' as const,
+      price: product.prices.price.value,
+      priceCurrency: product.prices.price.currencyCode,
+      ...(product.prices.priceRange.min.value !== product.prices.priceRange.max.value
+        ? {
+          minPrice: product.prices.priceRange.min.value,
+          maxPrice: product.prices.priceRange.max.value,
+        }
+        : null),
+    }
     : null;
 
   enum ItemCondition {

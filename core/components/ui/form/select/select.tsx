@@ -26,14 +26,14 @@ const Select = forwardRef<ElementRef<typeof SelectPrimitive.Trigger>, Props>(
         <SelectPrimitive.Trigger
           aria-label={label}
           className={cn(
-            'group relative flex h-12 w-full items-center justify-between border-2 border-gray-200 px-4 py-3 text-base text-black hover:border-primary focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 disabled:bg-gray-100 disabled:hover:border-gray-200 data-[placeholder]:text-gray-500',
+            'group relative flex w-full items-center justify-between px-4 py-3 text-base hover:border-primary focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 disabled:bg-gray-100 disabled:hover:border-gray-200 data-[placeholder]:text-gray-500 text-[#111] text-[15px] h-[60px] p-[1rem] border-[1px] border-[#707070]',
             error &&
-              'border-error-secondary hover:border-error focus-visible:border-error-secondary focus-visible:ring-error-secondary/20 disabled:border-gray-200',
+            'border-error-secondary hover:border-error focus-visible:border-error-secondary focus-visible:ring-error-secondary/20 disabled:border-gray-200',
           )}
           id={triggerId}
           ref={ref}
         >
-          <SelectPrimitive.Value placeholder={placeholder} />
+          <SelectPrimitive.Value placeholder="Choose Options" />
           <SelectPrimitive.Icon>
             <ChevronDown className="inline group-focus-visible:text-primary group-enabled:group-hover:text-primary" />
           </SelectPrimitive.Icon>

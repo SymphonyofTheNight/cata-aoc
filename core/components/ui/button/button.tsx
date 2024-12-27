@@ -30,13 +30,13 @@ const Button = forwardRef<ElementRef<'button'>, Props>(
     return (
       <Comp
         className={cn(
-          'relative flex w-full items-center justify-center border-2 border-primary px-[30px] py-2.5 text-base font-semibold leading-6 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 disabled:border-gray-400 !text-white',
+          'relative flex w-full items-center justify-center text-base leading-6 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 disabled:border-gray-400 !text-white bg-[#AD1A2E] h-[60px] text-[18px] font-[700] uppercase py-[1.5rem] px-[1rem] max-w-[480px]',
           variant === 'primary' &&
-          'bg-primary text-white hover:border-secondary hover:bg-secondary disabled:bg-gray-400 disabled:hover:border-gray-400 disabled:hover:bg-gray-400',
+          'text-white hover:border-secondary hover:bg-[#931627] disabled:bg-gray-400 disabled:hover:border-gray-400 disabled:hover:bg-gray-400 bg-[#AD1A2E]',
           variant === 'secondary' &&
-          'bg-transparent text-primary hover:border-secondary hover:bg-secondary hover:bg-opacity-10 hover:text-secondary disabled:text-gray-400 disabled:hover:border-gray-400 disabled:hover:bg-transparent disabled:hover:text-gray-400',
+          'bg-transparent text-primary hover:border-secondary hover:bg-[#931627] hover:bg-opacity-10 hover:text-secondary disabled:text-gray-400 disabled:hover:border-gray-400 disabled:hover:bg-transparent disabled:hover:text-gray-400 bg-[#AD1A2E]',
           variant === 'subtle' &&
-          'border-none bg-transparent text-primary hover:bg-secondary hover:bg-opacity-10 hover:text-secondary disabled:text-gray-400 disabled:hover:bg-transparent disabled:hover:text-gray-400',
+          'border-none bg-transparent text-primary hover:bg-[#931627] hover:bg-opacity-10 hover:text-secondary disabled:text-gray-400 disabled:hover:bg-transparent disabled:hover:text-gray-400 bg-[#AD1A2E]',
           className,
         )}
         disabled={disabled || loading}

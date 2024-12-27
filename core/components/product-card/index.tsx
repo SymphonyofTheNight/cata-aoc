@@ -24,7 +24,7 @@ export const ProductCard = ({
 }: Props) => {
   const format = useFormatter();
 
-  const { name, entityId, defaultImage, brand, path, prices } = product;
+  const { name, entityId, defaultImage, brand, path, prices, productOptions } = product;
 
   const price = pricesTransformer(prices, format);
 
@@ -40,6 +40,7 @@ export const ProductCard = ({
       price={price}
       showCompare={showCompare}
       subtitle={brand?.name}
+      productOptions={productOptions.edges?.length}
     />
   );
 };

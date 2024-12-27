@@ -6,6 +6,11 @@ const ClientComponent = () => {
     useEffect(() => {
         const getMainComponent = document.querySelector('#main-container') as HTMLElement | null;
 
+        const getProductDescription = document.querySelector('#product-description');
+
+        console.log("Testing");
+        console.log(getProductDescription);
+
         if (getMainComponent) {
             if (window.location.href === '/') {
                 getMainComponent.style.backgroundColor = '#F5F5F5'; // Home page background color

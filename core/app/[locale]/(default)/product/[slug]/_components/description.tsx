@@ -22,7 +22,7 @@ export const Description = ({ product }: Props) => {
   return (
     <>
       <h2 className="mb-4 text-xl font-bold md:text-2xl">{t('heading')}</h2>
-      <div dangerouslySetInnerHTML={{ __html: product.description }} />
+      <div id='product-description' dangerouslySetInnerHTML={{ __html: product.description }} />
     </>
   );
 };

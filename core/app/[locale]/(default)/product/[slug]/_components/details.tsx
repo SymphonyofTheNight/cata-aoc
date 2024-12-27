@@ -79,10 +79,10 @@ export const Details = ({ product }: Props) => {
         <span className='text-[#AD1A2E]'>Write a Review</span>
       </div>
 
-      <h1 className="mb-4 text-4xl lg:text-5xl text-[#111] text-[36px] font-[500] py-[15px]">{product.name}</h1>
+      <h1 className="text-4xl lg:text-[36px] text-[#111] font-[600] py-[15px] !pb-[0px]">{product.name}</h1>
 
       {product.prices && (
-        <div className="my-6 text-2xl font-bold lg:text-3xl">
+        <div className="my-6 text-2xl font-bold lg:text-3xl mb-[0px] pb-[16px] border-b-2 border-[#A2A2A3]">
           {showPriceRange ? (
             <span>
               {format.number(product.prices.priceRange.min.value, {
@@ -132,7 +132,7 @@ export const Details = ({ product }: Props) => {
                 </>
               ) : (
                 product.prices.price.value && (
-                  <span>
+                  <span className='text-[36px] font-[600] text-[#AD1A2E]'>
                     {format.number(product.prices.price.value, {
                       style: 'currency',
                       currency: product.prices.price.currencyCode,

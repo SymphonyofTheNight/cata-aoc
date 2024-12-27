@@ -17,21 +17,21 @@ const HomePageQuery = graphql(
   `
     query HomePageQuery {
       site {
-        newestProducts(first: 12) {
+        newestProducts(first: 30) {
           edges {
             node {
               ...ProductCardCarouselFragment
             }
           }
         }
-        featuredProducts(first: 12) {
+        featuredProducts(first: 30) {
           edges {
             node {
               ...ProductCardCarouselFragment
             }
           }
         }
-        bestSellingProducts(first: 12) {
+        bestSellingProducts(first: 30) {
           edges {
             node {
               ...ProductCardCarouselFragment
@@ -178,7 +178,7 @@ export default async function Home({ params }: Props) {
           title={t('Carousel.featuredProducts')}
         /> */}
         <ProductCardCarousel
-          products={bestSellingProducts}
+          products={featuredProducts}
           showCart={false}
           showCompare={false}
           title='OUR BESTSELLERS'

@@ -20,6 +20,28 @@ interface InteractionOptions {
   prefetch?: boolean;
 }
 
+//! custom interface 
+interface ProductOption {
+  entityId: number;
+  productOptions: {
+    edges: Array<{
+      node: {
+        isVariantOption: boolean;
+        values: {
+          edges: Array<{
+            node: {
+              imageUrl: string;
+              isSelected: boolean | null;
+            };
+          }>;
+        };
+        __typename: string;
+      };
+    }>;
+  };
+}
+
+
 export const MultipleChoiceField = ({ option }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -66,7 +88,7 @@ export const MultipleChoiceField = ({ option }: Props) => {
     case 'Swatch':
       return (
         <div key={option.entityId}>
-          <Label className="mb-2 inline-block font-semibold" id={`label-${option.entityId}`}>
+          <Label className="mb-2 inline-block font-[700] text-[#111] uppercase text-[13px]" id={`label-${option.entityId}`}>
             {option.displayName}
           </Label>
           <Swatch
@@ -103,7 +125,7 @@ export const MultipleChoiceField = ({ option }: Props) => {
     case 'RectangleBoxes':
       return (
         <div key={option.entityId}>
-          <Label className="mb-2 inline-block font-semibold" id={`label-${option.entityId}`}>
+          <Label className="mb-2 inline-block font-[700] text-[#111] uppercase text-[13px]" id={`label-${option.entityId}`}>
             {option.displayName}
           </Label>
           <RectangleList
@@ -134,7 +156,7 @@ export const MultipleChoiceField = ({ option }: Props) => {
     case 'RadioButtons':
       return (
         <div key={option.entityId}>
-          <Label className="mb-2 inline-block font-semibold" id={`label-${option.entityId}`}>
+          <Label className="mb-2 inline-block font-[700] text-[#111] uppercase text-[13px]" id={`label-${option.entityId}`}>
             {option.displayName}
           </Label>
           <RadioGroup
@@ -168,7 +190,7 @@ export const MultipleChoiceField = ({ option }: Props) => {
     case 'DropdownList':
       return (
         <div key={option.entityId}>
-          <Label className="mb-2 inline-block font-semibold" htmlFor={`label-${option.entityId}`}>
+          <Label className="mb-2 inline-block font-[700] text-[#111] uppercase text-[13px]" htmlFor={`label-${option.entityId}`}>
             {option.displayName}
           </Label>
           <Select
@@ -200,10 +222,11 @@ export const MultipleChoiceField = ({ option }: Props) => {
       );
 
     case 'ProductPickList':
+
     case 'ProductPickListWithImages':
       return (
         <div key={option.entityId}>
-          <Label className="mb-2 inline-block font-semibold" id={`label-${option.entityId}`}>
+          <Label className="mb-2 inline-block font-[700] text-[#111] uppercase text-[13px]" id={`label-${option.entityId}`}>
             {option.displayName}
           </Label>
           <PickList
@@ -219,9 +242,9 @@ export const MultipleChoiceField = ({ option }: Props) => {
                 label: value.label,
                 image: value.defaultImage
                   ? {
-                      url: value.defaultImage.url,
-                      altText: value.defaultImage.altText,
-                    }
+                    url: value.defaultImage.url,
+                    altText: value.defaultImage.altText,
+                  }
                   : undefined,
                 onMouseEnter: () => {
                   handleMouseEnter({

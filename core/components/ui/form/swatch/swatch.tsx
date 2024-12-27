@@ -20,7 +20,7 @@ const Swatch = forwardRef<ElementRef<typeof RadioGroupPrimitive.Root>, Props>(
 
     return (
       <RadioGroupPrimitive.Root
-        className={cn('flex flex-wrap gap-4', className)}
+        className={cn('flex flex-wrap gap-2', className)}
         ref={ref}
         role="radiogroup"
         {...props}
@@ -33,9 +33,9 @@ const Swatch = forwardRef<ElementRef<typeof RadioGroupPrimitive.Root>, Props>(
               key={`${id}-${value}`}
               {...itemProps}
               className={cn(
-                'group h-12 w-12 border-2 bg-white p-1 hover:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 disabled:border-gray-100 disabled:hover:border-gray-100 data-[state=checked]:border-primary',
+                'group h-[2.5rem] w-[2.5rem] border-2 bg-white p-1 hover:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20 disabled:border-gray-100 disabled:hover:border-gray-100 data-[state=checked]:border-primary !rounded-[50px]',
                 error &&
-                  'border-error-secondary hover:border-error focus-visible:border-error-secondary focus-visible:ring-error/20 disabled:border-gray-200 data-[state=checked]:border-error-secondary',
+                'border-error-secondary hover:border-error focus-visible:border-error-secondary focus-visible:ring-error/20 disabled:border-gray-200 data-[state=checked]:border-error-secondary',
               )}
               title={label}
               value={value}
@@ -49,7 +49,7 @@ const Swatch = forwardRef<ElementRef<typeof RadioGroupPrimitive.Root>, Props>(
                   }}
                 />
               ) : (
-                <span className="relative block h-9 w-9 overflow-hidden border border-gray-200 group-disabled:border-gray-100">
+                <span className="relative block h-[1.75rem] w-[1.75rem] overflow-hidden border border-gray-200 group-disabled:border-gray-100 !rounded-[50px]">
                   <span className="absolute -start-px -top-[2px] w-[51px] origin-top-left rotate-45 border-t-2 border-error-secondary group-disabled:opacity-30" />
                 </span>
               )}

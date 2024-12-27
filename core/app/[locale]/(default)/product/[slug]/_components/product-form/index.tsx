@@ -63,6 +63,11 @@ export const ProductForm = ({ data: product }: Props) => {
   const t = useTranslations('Product.Form');
   const productOptions = removeEdgesAndNodes(product.productOptions);
 
+  //! getting variant images
+  const variantImages = removeEdgesAndNodes(product?.variants);
+
+  console.log(variantImages)
+
   const cart = useCart();
   const toastId = useId();
   const { handleSubmit, register, ...methods } = useProductForm();
@@ -125,10 +130,11 @@ export const ProductForm = ({ data: product }: Props) => {
 
   return (
     <FormProvider handleSubmit={handleSubmit} register={register} {...methods}>
-      <form className="flex flex-col gap-6 @container" onSubmit={handleSubmit(productFormSubmit)}>
+      <form className="flex flex-col gap-6 @container pt-[16px]" onSubmit={handleSubmit(productFormSubmit)}>
         <input type="hidden" value={product.entityId} {...register('product_id')} />
 
         {productOptions.map((option) => {
+
           if (option.__typename === 'MultipleChoiceOption') {
             return <MultipleChoiceField key={option.entityId} option={option} />;
           }
@@ -162,12 +168,12 @@ export const ProductForm = ({ data: product }: Props) => {
           <Submit data={product} />
 
           {/* NOT IMPLEMENTED YET */}
-          <div className="w-full">
+          {/* <div className="w-full">
             <Button disabled type="submit" variant="secondary">
               <Heart aria-hidden="true" className="mr-2" />
               <span>{t('saveToWishlist')}</span>
             </Button>
-          </div>
+          </div> */}
         </div>
       </form>
     </FormProvider>
