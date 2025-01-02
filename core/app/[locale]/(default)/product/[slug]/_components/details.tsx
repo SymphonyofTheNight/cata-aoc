@@ -10,6 +10,12 @@ import { ProductFormFragment } from './product-form/fragment';
 import { ProductSchema, ProductSchemaFragment } from './product-schema';
 import { ReviewSummary, ReviewSummaryFragment } from './review-summary';
 
+//! custom 
+import dynamic from 'next/dynamic';
+const AccordionComponent = dynamic(() => import('../ClientTemplate/Accordion'), {
+  ssr: true,
+});
+
 export const DetailsFragment = graphql(
   `
     fragment DetailsFragment on Product {
@@ -55,11 +61,24 @@ export const DetailsFragment = graphql(
   ],
 );
 
-interface Props {
-  product: FragmentOf<typeof DetailsFragment>;
+export const DescriptionFragment = graphql(`
+  fragment DescriptionFragment on Product {
+      description
+  }
+`);
+
+interface Video {
+  title: string;
+  url: string;
 }
 
-export const Details = ({ product }: Props) => {
+interface Props {
+  product: FragmentOf<typeof DetailsFragment>;
+  getDescription: FragmentOf<typeof DescriptionFragment>;
+  videos: Video[];
+}
+
+export const Details = ({ product, getDescription, videos }: Props) => {
   const t = useTranslations('Product.Details');
   const format = useFormatter();
 
@@ -147,7 +166,11 @@ export const Details = ({ product }: Props) => {
 
       <ProductForm data={product} />
 
-      <div className="my-12">
+      <ProductSchema product={product} />
+
+      <AccordionComponent product={product} description={getDescription} videos={videos} />
+
+      {/* <div className="my-12">
         <h2 className="mb-4 text-xl font-bold md:text-2xl">{t('additionalDetails')}</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           {Boolean(product.sku) && (
@@ -202,8 +225,8 @@ export const Details = ({ product }: Props) => {
               </div>
             ))}
         </div>
-      </div>
-      <ProductSchema product={product} />
+      </div> */}
+
     </div>
   );
 };

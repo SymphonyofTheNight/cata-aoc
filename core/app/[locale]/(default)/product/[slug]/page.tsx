@@ -15,6 +15,12 @@ import { Reviews } from './_components/reviews';
 import { Warranty } from './_components/warranty';
 import { getProduct } from './page-data';
 
+//! custom 
+import dynamic from 'next/dynamic';
+const AccordionComponent = dynamic(() => import('./ClientTemplate/Accordion'), {
+  ssr: true,
+});
+
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -95,13 +101,18 @@ export default async function Product(props: Props) {
 
   const category = removeEdgesAndNodes(product.categories).at(0);
 
+  const getDescription = product;
+
+  const videos = removeEdgesAndNodes(product.videos);
+
   return (
     <>
       {category && <Breadcrumbs category={category} />}
 
       <div className="mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8 w-[92%] max-w-[1440px] mx-auto">
         <Gallery product={product} />
-        <Details product={product} />
+        <Details product={product} getDescription={getDescription} videos={videos} />
+        {/* client template here */}
       </div>
 
       <div className="lg:col-span-2 w-[92%] max-w-[1440px] mx-auto">

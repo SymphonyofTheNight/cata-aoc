@@ -65,3 +65,12 @@ html body > *:nth-last-child(3) div:nth-child(3) section:nth-child(2) ul li a sp
     font-size: 18px!important;
     /* font-weight: 600; */
 }
+
+.accordion-dropdown-container div{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+.accordion-main div{
+    box-shadow: none!important;
+}

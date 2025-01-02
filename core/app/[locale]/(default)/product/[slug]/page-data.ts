@@ -48,6 +48,14 @@ const ProductPageQuery = graphql(
             metaDescription
             metaKeywords
           }
+          videos {
+            edges {
+              node {
+                title
+                url
+              }
+            }
+          }
         }
       }
     }
