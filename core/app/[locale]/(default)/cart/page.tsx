@@ -80,7 +80,7 @@ export default async function Cart() {
   const lineItems = [...cart.lineItems.physicalItems, ...cart.lineItems.digitalItems];
 
   return (
-    <div>
+    <div className='max-w-[1440px] mx-auto py-[30px]'>
       <h1 className="pb-6 text-4xl font-black lg:pb-10 lg:text-5xl">{t('heading')}</h1>
       <div className="pb-12 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
         <ul className="col-span-2">

@@ -80,23 +80,25 @@ export default async function Home({ params }: Props) {
         </div>
 
         <div className='max-w-[1440px] w-[92%] h-auto mx-auto'>
-          <div className='flex flex-row items-center justify-between py-[15px]'>
-            <div className='h-[30px] w-[0px] bg-[#AD1A2E] opacity-[.4]'></div>
-            <span className='text-[#AD1A2E] text-[14px] font-[600] flex flex=row items-center justify-center'>
-              <img className='w-auto h-[30px] object-contain mr-[10px]' src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/thread-icon-01-2x.png?t=1730337324' />
-              PROUD & PASSIONATE MAKERS
-            </span>
-            <div className='h-[30px] w-[1px] bg-[#AD1A2E] opacity-[.4]'></div>
-            <span className='text-[#AD1A2E] text-[14px] font-[600] flex flex=row items-center justify-center'>
-              <img className='w-auto h-[30px] object-contain mr-[10px]' src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/strormycap-icon-02-2x.png?t=1730337325' />
-              SINCE 1903
-            </span>
-            <div className='h-[30px] w-[1px] bg-[#AD1A2E] opacity-[.4]'></div>
-            <span className='text-[#AD1A2E] text-[14px] font-[600] flex flex=row items-center justify-center'>
-              <img className='w-auto h-[30px] object-contain mr-[10px]' src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/family-icon-03-2x.png?t=1730337326' />
-              FAMILY OWNED & OPERATED
-            </span>
-            <div className='h-[30px] w-[0px] bg-[#AD1A2E] opacity-[.4]'></div>
+          <div className='max-w-[1440px] w-auto md:w-[92%] h-auto mx-auto flex items-center justify-center'>
+            <div className='max-w-[1440px] w-auto md:w-[92%] flex flex-col items-start md:flex-row md:items-center justify-between py-[15px]'>
+              <div className='h-[30px] w-[0px] bg-[#AD1A2E] opacity-[.4] hidden md:block'></div>
+              <span className='text-[#AD1A2E] text-[14px] font-[600] flex flex=row items-center justify-center'>
+                <img className='w-auto h-[30px] object-contain mr-[10px]' src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/thread-icon-01-2x.png?t=1730337324' />
+                PROUD & PASSIONATE MAKERS
+              </span>
+              <div className='h-[30px] w-[1px] bg-[#AD1A2E] opacity-[.4] hidden md:block'></div>
+              <span className='text-[#AD1A2E] text-[14px] font-[600] flex flex=row items-center justify-center'>
+                <img className='w-auto h-[30px] object-contain mr-[10px]' src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/strormycap-icon-02-2x.png?t=1730337325' />
+                SINCE 1903
+              </span>
+              <div className='h-[30px] w-[1px] bg-[#AD1A2E] opacity-[.4] hidden md:block'></div>
+              <span className='text-[#AD1A2E] text-[14px] font-[600] flex flex=row items-center justify-center'>
+                <img className='w-auto h-[30px] object-contain mr-[10px]' src='https://cdn11.bigcommerce.com/s-t0676dlrio/images/stencil/original/image-manager/family-icon-03-2x.png?t=1730337326' />
+                FAMILY OWNED & OPERATED
+              </span>
+              <div className='h-[30px] w-[0px] bg-[#AD1A2E] opacity-[.4] hidden md:block'></div>
+            </div>
           </div>
           <div className='w-[100%] h-auto flex flex-row flex-wrap'>
             <div className='group w-[100%] lg:w-[50%] relative bg-red-700 overflow-hidden bg-opacity-30'>

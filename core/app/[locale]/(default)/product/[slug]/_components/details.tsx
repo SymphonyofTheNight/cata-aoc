@@ -88,7 +88,7 @@ export const Details = ({ product, getDescription, videos }: Props) => {
     product.prices?.priceRange.min.value !== product.prices?.priceRange.max.value;
 
   return (
-    <div className='mt-[50px]'>
+    <div className='mt-[10px]'>
       {/* {product.brand && (
         <p className="mb-2 font-semibold uppercase text-gray-500">{product.brand.name}</p>
       )} */}
