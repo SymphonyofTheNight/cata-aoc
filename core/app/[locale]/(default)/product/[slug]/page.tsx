@@ -109,14 +109,17 @@ export default async function Product(props: Props) {
     <>
       {category && <Breadcrumbs category={category} />}
 
-      <div className="mb-12 mt-4 lg:grid lg:grid-cols-2 lg:gap-8 w-[92%] max-w-[1440px] mx-auto">
+      {/* <div className='bg-red-700 w-full h-[50px]'>
+
+      </div> */}
+      <div className="mb-12 lg:grid lg:grid-cols-2 lg:gap-8 w-[92%] max-w-[1440px] mx-auto">
         <Gallery product={product} />
         <Details product={product} getDescription={getDescription} videos={videos} />
         {/* client template here */}
       </div>
 
       <div className="lg:col-span-2 w-[92%] max-w-[1440px] mx-auto">
-        <Description product={product} />
+        {/* <Description product={product} /> */}
         <Warranty product={product} />
         <Suspense fallback={t('loading')}>
           <Reviews productId={product.entityId} />

@@ -60,21 +60,22 @@ export const Reviews = async ({ productId }: Props) => {
   const reviews = removeEdgesAndNodes(product.reviews);
 
   return (
-    <>
-      <h3 className="mb-4 mt-8 text-xl font-bold md:text-2xl">
-        {t('heading')}
+    <div className='w-full grid justify-center text-center'>
+      <h3 className="mb-4 mt-8 text-xl font-bold md:text-2xl uppercase">
+        Product {t('heading')}
         {reviews.length > 0 && (
           <span className="ms-2 ps-1 text-gray-500">
-            <span className="sr-only">{t('reviewsCount')}</span>
+            <span className="sr-only uppercase">{t('reviewsCount')}</span>
             {reviews.length}
           </span>
         )}
       </h3>
 
-      <ul className="lg:grid lg:grid-cols-2 lg:gap-8">
+      {/* <ul className="lg:grid lg:grid-cols-2 lg:gap-8"> */}
+      <ul className="lg:grid lg:gap-8 text-center">
         {reviews.length === 0 ? (
-          <li>
-            <p className="pb-6 pt-1">{t('unreviewed')}</p>
+          <li className='text-center'>
+            <p className="pb-6 pt-1 text-center">{t('unreviewed')}</p>
           </li>
         ) : (
           reviews.map((review) => {
@@ -98,6 +99,6 @@ export const Reviews = async ({ productId }: Props) => {
         )}
       </ul>
       {reviews.length > 0 && <ProductReviewSchema productId={productId} reviews={reviews} />}
-    </>
+    </div>
   );
 };
