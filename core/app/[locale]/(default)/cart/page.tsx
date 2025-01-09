@@ -82,7 +82,7 @@ export default async function Cart() {
   return (
     <div className='max-w-[1440px] mx-auto py-[30px]'>
       <h1 className="pb-6 text-4xl font-black lg:pb-10 lg:text-5xl">{t('heading')}</h1>
-      <div className="pb-12 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+      {/* <div className="pb-12 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
         <ul className="col-span-2">
           {lineItems.map((product) => (
             <CartItem currencyCode={cart.currencyCode} key={product.entityId} product={product} />
@@ -94,6 +94,19 @@ export default async function Cart() {
 
           <CheckoutButton cartId={cartId} />
         </div>
+      </div> */}
+      <div className="pb-12 md:grid">
+        <ul className="col-span-2">
+          {lineItems.map((product) => (
+            <CartItem currencyCode={cart.currencyCode} key={product.entityId} product={product} />
+          ))}
+        </ul>
+
+        {/* <div className="col-span-1 col-start-2 lg:col-start-3">
+          {checkout && <CheckoutSummary checkout={checkout} geography={geography} />}
+
+          <CheckoutButton cartId={cartId} />
+        </div> */}
       </div>
       <CartViewed checkout={checkout} currencyCode={cart.currencyCode} lineItems={lineItems} />
     </div>
